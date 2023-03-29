@@ -55,6 +55,15 @@ client.on('message', (channel, userstate, message, self) => {
         client.say(channel, `inst -  https://www.instagram.com/topsem/ MorphinTime`);
       }
     }
+    // плейлист
+    if (message.toLowerCase() === '!плейлист' || message.toLowerCase() === '!пл' ) {
+      client.say(channel, `@${userstate.username} Плейлист Суры - https://t.me/steelstaya/5036 WW`) 
+    }
+    if ((message.startsWith('!плейлист') || message.startsWith('!пл') || message.startsWith('!ПЛ')) && userstate.username === 'steel') { 
+      for (let i = 0; i <+ messageRepeatCount[1]; i++) {
+        client.say(channel, `Плейлист Суры - https://t.me/steelstaya/5036 WW`);
+      }
+    }
     // winline
     if (message.toLowerCase() === '!wl') {
       client.say(channel, `@${userstate.username} WINLINE promo: STEEL - https://t.me/steelstaya/4215`) 
@@ -83,6 +92,11 @@ client.on('chat', (channel, user, message, userstate) => {
     if (message.startsWith('!inst') || message.startsWith('!инст')) { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
         client.say(channel, `inst -  https://www.instagram.com/topsem/ MorphinTime`);
+      }
+    }
+    if (message.startsWith('!плейлист') || message.startsWith('!пл') || message.startsWith('!ПЛ')) { 
+      for (let i = 0; i <+ messageRepeatCount[1]; i++) {
+        client.say(channel, `Плейлист Суры - https://t.me/steelstaya/5036 WW`);
       }
     }
     if (message.startsWith('!wl')) { 
