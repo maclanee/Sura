@@ -19,31 +19,31 @@ client.on('message', (channel, userstate, message, self) => {
     if(self) return;
     let messageRepeatCount = message.split(' ')
 
-    if (message.toLowerCase() === '1' && (userstate.username === 'snussed' || userstate.username === 'steel' || userstate.username === 'icyroddy' )) {
+    if (message.toLowerCase() === '1' && (userstate.username === 'snussed' || userstate.username === '1gamach' || userstate.username === 'icyroddy' )) {
       client.say(channel, `@${userstate.username} Works.`) 
     }
 
-    if ((message.startsWith('!спам') || message.startsWith('!spam')) && userstate.username === 'snussed') {
+    if ((message.startsWith('!спам') || message.startsWith('!spam')) && userstate.username === 'snussed' ) {
       for (let i = 0; i < + messageRepeatCount[1]; i++) {
         client.say(channel, `${message.slice(8)}`);
       }
     }
     // тг
     if (message.toLowerCase() === '!tg') {
-      client.say(channel, `@${userstate.username} TG - https://t.me/steelstaya 🦜`)
+      client.say(channel, `@${userstate.username} TG - https://t.me/steelstaya 🍌`)
     }
     if ((message.startsWith('!tg') ) && userstate.username === 'steel') { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
-        client.say(channel, `TG - https://t.me/steelstaya 🦜`);
+        client.say(channel, `TG - https://t.me/steelstaya 🍌`);
       }
     }
-    // kick
-    if (message.toLowerCase() === '!kick') {
-      client.say(channel, `@${userstate.username} 🟩KICK - https://kick.com/steelv`) 
+    // чебу пицца
+    if (message.toLowerCase() === '!чебу') {
+      client.say(channel, `@${userstate.username} 🍕Амбассадор чебу пиццы - https://hotgames.eatwithfun.ru/`) 
     }
-    if (message.startsWith('!kick') && userstate.username === 'steel') { 
+    if (message.startsWith('!чебу') && userstate.username === 'steel') { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
-        client.say(channel, `🟩KICK - https://kick.com/steelv`);
+        client.say(channel, `🍕Амбассадор чебу пиццы - https://hotgames.eatwithfun.ru/`);
       }
     }
     // inst
@@ -71,6 +71,18 @@ client.on('message', (channel, userstate, message, self) => {
     if (message.startsWith('!wl') && userstate.username === 'steel') { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
         client.say(channel, `WINLINE promo: STEEL - https://t.me/steelstaya/4215`);
+      }
+    }
+    // gta
+    if (message.startsWith('!промо') && userstate.username === 'snussed') { 
+      for (let i = 0; i <+ messageRepeatCount[1]; i++) {
+        client.say(channel, `Промокод - steel GlitchCat $$$ + VIP`);
+      }
+    }
+    if (message.startsWith('!prm') && userstate.username === 'snussed' ) {
+      client.say(channel, `⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢛⡛⠻⡟⢛⡛⠻⣿⠛⣛⠛⢿⡟⢻⣿⡟⠛⣿⠟⣛⠛⢿⣿⣿⣿⣿ ⣿⣿⣿⡇⠘⠛⢀⡇⢘⠛⢠⡇⢸⣿⡇⢸⡇⡆⠻⢡⠀⡇⢸⣿⡇⢸⣿⣿⣿⣿ ⣿⣿⣿⣧⣸⣿⣿⣇⣸⣧⣈⣷⣤⣉⣡⣾⣇⣿⣄⣾⣀⣷⣤⣉⣡⣾⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⣿⠿⠿⠿⢿⠿⠿⠿⡿⠿⠿⢿⠿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⡁⠒⠦⢼⣶⠀⣶⣾⠀⠶⢶⡇⠰⠶⢾⠀⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⡉⠛⠂⣸⣿⠀⣿⣿⠀⠛⠛⡇⠘⠛⢻⠀⠛⠛⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⡿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⠋⠄⣌⣻⠋⠄⣌⣻⡏⠄⣌⣹⣿⣿⣿⢻⣿⣿⣷⠈⣿⠇⣸⠀⣿⠀⣤⠈⣿ ⣿⡓⠆⠄⢹⡓⠆⠄⢹⡓⠆⠄⢹⣿⣯⣥⢨⣭⣿⣿⣇⠘⢠⣿⠀⣿⠀⣥⣴⣿ ⣿⣿⣦⣾⣿⣿⣦⣶⣿⣿⣦⣶⣿⣿⣿⣿⣾⣿⣿⣿⣿⣶⣾⣿⣶⣿⣶⣿⣿⣿`);
+      for (let i = 0; i <+ messageRepeatCount[1]; i++) {
+        client.say(channel, `Arizona Liberty | Promo: steel Подробнее: https://cutt.ly/c8h5nA1`);
       }
     }
 
@@ -104,9 +116,9 @@ client.on('chat', (channel, user, message, userstate) => {
         client.say(channel, `WINLINE promo: STEEL - https://t.me/steelstaya/4215`);
       }
     }
-    if (message.startsWith('!kick')) { 
+    if (message.startsWith('!чебу')) { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
-        client.say(channel, `🟩KICK - https://kick.com/steelv`);
+        client.say(channel, `🍕Амбассадор чебу пиццы - https://hotgames.eatwithfun.ru/`);
       }
     }
   }
