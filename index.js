@@ -6,7 +6,7 @@ const client = new tmi.Client({
     connection: {
         reconnect: true
     },
-	channels: [ 'steel' ],
+	channels: [ 'steel  ' ],
     identity: {
 		username: process.env.TWITCH_BOT_USERNAME,
 		password: process.env.TWITCH_OAUTH_TOKEN
@@ -19,11 +19,11 @@ client.on('message', (channel, userstate, message, self) => {
     if(self) return;
     let messageRepeatCount = message.split(' ')
 
-    if (message.toLowerCase() === '1' && (userstate.username === 'snussed' || userstate.username === '1gamach' || userstate.username === 'icyroddy' )) {
-      client.say(channel, `@${userstate.username} Works.`) 
+    if (message.toLowerCase() === '1' && (userstate.username === 'snussedgorode' || userstate.username === '1gamach' || userstate.username === 'icyroddy' )) {
+      client.say(channel, `@${userstate.username}.`) 
     }
 
-    if ((message.startsWith('!спам') || message.startsWith('!spam')) && userstate.username === 'snussed' ) {
+    if ((message.startsWith('!спам') || message.startsWith('!spam')) && userstate.username === 'snussedgorode' ) {
       for (let i = 0; i < + messageRepeatCount[1]; i++) {
         client.say(channel, `${message.slice(8)}`);
       }
@@ -37,13 +37,22 @@ client.on('message', (channel, userstate, message, self) => {
         client.say(channel, `TG - https://t.me/steelstaya 🍌`);
       }
     }
-    // чебу пицца
-    if (message.toLowerCase() === '!чебу') {
-      client.say(channel, `@${userstate.username} 🍕Амбассадор чебу пиццы - https://hotgames.eatwithfun.ru/`) 
+    // getx
+    if (message.toLowerCase() === '!getx' || message.toLowerCase() === '!гет' ) {
+      client.say(channel, `@${userstate.username} 🚀GETX PROMO STEEL - https://t.me/steelstaya/5498 `)
     }
-    if (message.startsWith('!чебу') && userstate.username === 'steel') { 
+    if ((message.startsWith('!getx') ) && userstate.username === 'steel') { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
-        client.say(channel, `🍕Амбассадор чебу пиццы - https://hotgames.eatwithfun.ru/`);
+        client.say(channel, `🚀GETX PROMO STEEL - https://t.me/steelstaya/5498 `);
+      }
+    }
+    // soldout
+    if (message.toLowerCase() === '!soldout' || message.toLowerCase() === '!so' ) {
+      client.say(channel, `@${userstate.username}, УСТРОЙ ПОЛНЫЙ SOLDOUT CREAM SODA CLUB https://creamsodaclub.ru`) 
+    }
+    if (message.startsWith('!so') && userstate.username === 'steel') { 
+      for (let i = 0; i <+ messageRepeatCount[1]; i++) {
+        client.say(channel, `УСТРОЙ ПОЛНЫЙ SOLDOUT CREAM SODA CLUB https://creamsodaclub.ru`);
       }
     }
     // inst
@@ -56,30 +65,30 @@ client.on('message', (channel, userstate, message, self) => {
       }
     }
     // плейлист
-    if (message.toLowerCase() === '!плейлист' || message.toLowerCase() === '!пл' ) {
-      client.say(channel, `@${userstate.username} Плейлист Суры - https://t.me/steelstaya/5036 WW`) 
+    if (message.toLowerCase() === '!плейлист' || message.toLowerCase() === '!пл' || message.toLowerCase() === '!playlist') {
+      client.say(channel, `@${userstate.username} Плейлист Суры - https://t.me/steelstaya/5036 Dadada`) 
     }
-    if ((message.startsWith('!плейлист') || message.startsWith('!пл') || message.startsWith('!ПЛ')) && userstate.username === 'steel') { 
+    if ((message.startsWith('!плейлист') || message.startsWith('!пл') || message.startsWith('!playlist')) && userstate.username === 'steel') { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
-        client.say(channel, `Плейлист Суры - https://t.me/steelstaya/5036 WW`);
+        client.say(channel, `Плейлист Суры - https://t.me/steelstaya/5036 Dadada`);
       }
     }
     // winline
     if (message.toLowerCase() === '!wl') {
-      client.say(channel, `@${userstate.username} WINLINE promo: STEEL - https://t.me/steelstaya/4215`) 
+      client.say(channel, `@${userstate.username} WINLINE promo: STEEL - https://winline.tv/438Sism`) 
     }
     if (message.startsWith('!wl') && userstate.username === 'steel') { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
-        client.say(channel, `WINLINE promo: STEEL - https://t.me/steelstaya/4215`);
+        client.say(channel, `WINLINE promo: STEEL - https://winline.tv/438Sism`);
       }
     }
     // gta
-    if (message.startsWith('!промо') && userstate.username === 'snussed') { 
+    if (message.startsWith('!промо') && userstate.username === 'snussedgorode') { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
         client.say(channel, `Промокод - steel GlitchCat $$$ + VIP`);
       }
     }
-    if (message.startsWith('!prm') && userstate.username === 'snussed' ) {
+    if (message.startsWith('!prm') && userstate.username === 'snussedgorode' ) {
       client.say(channel, `⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢛⡛⠻⡟⢛⡛⠻⣿⠛⣛⠛⢿⡟⢻⣿⡟⠛⣿⠟⣛⠛⢿⣿⣿⣿⣿ ⣿⣿⣿⡇⠘⠛⢀⡇⢘⠛⢠⡇⢸⣿⡇⢸⡇⡆⠻⢡⠀⡇⢸⣿⡇⢸⣿⣿⣿⣿ ⣿⣿⣿⣧⣸⣿⣿⣇⣸⣧⣈⣷⣤⣉⣡⣾⣇⣿⣄⣾⣀⣷⣤⣉⣡⣾⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⣿⠿⠿⠿⢿⠿⠿⠿⡿⠿⠿⢿⠿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⡁⠒⠦⢼⣶⠀⣶⣾⠀⠶⢶⡇⠰⠶⢾⠀⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⡉⠛⠂⣸⣿⠀⣿⣿⠀⠛⠛⡇⠘⠛⢻⠀⠛⠛⣿⣿⣿⣿⣿⣿ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⡿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ⣿⠋⠄⣌⣻⠋⠄⣌⣻⡏⠄⣌⣹⣿⣿⣿⢻⣿⣿⣷⠈⣿⠇⣸⠀⣿⠀⣤⠈⣿ ⣿⡓⠆⠄⢹⡓⠆⠄⢹⡓⠆⠄⢹⣿⣯⣥⢨⣭⣿⣿⣇⠘⢠⣿⠀⣿⠀⣥⣴⣿ ⣿⣿⣦⣾⣿⣿⣦⣶⣿⣿⣦⣶⣿⣿⣿⣿⣾⣿⣿⣿⣿⣶⣾⣿⣶⣿⣶⣿⣿⣿`);
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
         client.say(channel, `Arizona Liberty | Promo: steel Подробнее: https://cutt.ly/c8h5nA1`);
@@ -106,19 +115,24 @@ client.on('chat', (channel, user, message, userstate) => {
         client.say(channel, `inst -  https://www.instagram.com/topsem/ MorphinTime`);
       }
     }
-    if (message.startsWith('!плейлист') || message.startsWith('!пл') || message.startsWith('!ПЛ')) { 
+    if (message.startsWith('!плейлист') || message.startsWith('!пл') || message.startsWith('!playlist')) { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
-        client.say(channel, `Плейлист Суры - https://t.me/steelstaya/5036 WW`);
+        client.say(channel, `Плейлист Суры - https://t.me/steelstaya/5036 Dadada`);
       }
     }
     if (message.startsWith('!wl')) { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
-        client.say(channel, `WINLINE promo: STEEL - https://t.me/steelstaya/4215`);
+        client.say(channel, `WINLINE promo: STEEL - https://winline.tv/438Sism`);
       }
     }
-    if (message.startsWith('!чебу')) { 
+    if (message.startsWith('!getx') || message.startsWith('!гет')) { 
       for (let i = 0; i <+ messageRepeatCount[1]; i++) {
-        client.say(channel, `🍕Амбассадор чебу пиццы - https://hotgames.eatwithfun.ru/`);
+        client.say(channel, `🚀GETX PROMO STEEL - https://t.me/steelstaya/5498`);
+      }
+    } 
+    if (message.startsWith('!so')) { 
+      for (let i = 0; i <+ messageRepeatCount[1]; i++) {
+        client.say(channel, `УСТРОЙ ПОЛНЫЙ SOLDOUT CREAM SODA CLUB https://creamsodaclub.ru`);
       }
     }
   }
